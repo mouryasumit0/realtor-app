@@ -7,9 +7,11 @@ import { HomeModule } from './home/home.module';
 import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { UserInterceptor } from './user/interceptor/user.interceptor'
 import { AuthGuard } from './guards/auth.guards';
+import { RenderModule } from 'nest-next';
+import Next from "next"
 
 @Module({
-  imports: [UserModule, PrismaModule, HomeModule],
+  imports: [UserModule, PrismaModule, HomeModule,RenderModule.forRootAsync(Next({ dev: true}),{ viewsDir: null })],
   controllers: [AppController],
   providers: [AppService, {
     provide: APP_INTERCEPTOR,

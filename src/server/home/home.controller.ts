@@ -1,9 +1,8 @@
-import { Controller, Delete, Get, Param, Post, Put, Query, ParseIntPipe, Body, UnauthorizedException, UseGuards } from '@nestjs/common';
+import { Controller, Delete, Get, Param, Post, Put, Query, ParseIntPipe, Body, UnauthorizedException} from '@nestjs/common';
 import { PropertyType, Usertype } from '@prisma/client';
 import { CreateHomeDto, HomeResponseDto, UpdateHomeDto } from './dtos/home.dto';
 import { HomeService } from './home.service';
 import { User, Userinfo } from 'src/server/user/decorator/user.decorator'
-import { AuthGuard } from 'src/server/guards/auth.guards';
 import { Roles } from 'src/server/decorators/decorator.roles';
 
 @Controller('home')

@@ -1,5 +1,6 @@
 /.env
-
+/.next
+/.vscode
 # compiled output
 /dist
 /node_modules
